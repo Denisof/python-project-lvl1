@@ -1,3 +1,5 @@
 #!/usr/bin/env python
+from brain_games.scripts.cli import welcome_user
 def main():
-    print('Welcome to the Brain Games!')
+    print('Welcome to the Brain Games!')    
+    welcome_user()
