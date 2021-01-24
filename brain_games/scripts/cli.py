@@ -1,8 +1,11 @@
 """Functions to interact with user in cli."""
-from prompt import string
 
 
-def welcome_user():
-    """Welcomes user in cli."""
-    name = string('May I have your name? ')
+def welcome_user(name):
+    """
+    Welcomes user by name in cli.
+
+    Args:
+        name (string): User name.
+    """
     print('Hello, {0}'.format(name))  # noqa:WPS421
