@@ -27,7 +27,9 @@ jobs:
         poetry config virtualenvs.in-project true
         make build
         make package-install
+        make install
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
+        source $HOME/.poetry/env
         make lint
