@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["DENYSUA <denys@EPUAKYIW4601.kyiv.epam.com>"]
 packages = [
@@ -14,6 +14,7 @@ python = "^3.8"
 prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.14.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
