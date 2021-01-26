@@ -12,28 +12,16 @@ def get_rules():
     return 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def get_question():
+def get_question_answer():
     """
     Generate question.
 
     Returns:
-        int: Random integer as a question.
+        tuple: Tuple of question and answer.
     """
-    return randint(1, 1000)  # noqa:S311
-
-
-def is_correct(question, answer):
-    """
-    Check question and answer.
-
-    Args:
-        question (int): Number.
-        answer (string): yes or no.
-
-    Returns:
-        bool: True if correct, False otherwise.
-    """
-    return answer == _is_even(question)
+    question = randint(1, 1000)  # noqa:S311
+    answer = _is_even(question)
+    return (question, answer)
 
 
 def _is_even(number):

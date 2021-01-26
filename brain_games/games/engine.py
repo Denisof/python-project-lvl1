@@ -21,10 +21,10 @@ def play(game):
     right_answers_count = 0
     print(game.get_rules())  # noqa:WPS421
     while right_answers_count < question_count:
-        question = game.get_question()
-        print('Question: {0}'.format(question))  # noqa:WPS421
-        answer = string('Your answer: ')
-        if not game.is_correct(question, answer):
+        question_answer = game.get_question_answer()
+        print('Question: {0}'.format(question_answer[0]))  # noqa:WPS421
+        user_answer = string('Your answer: ')
+        if question_answer[1] != user_answer:
             print("Let's try again, {0}!".format(name))  # noqa:WPS421
             return
         print('Correct!')  # noqa:WPS421
