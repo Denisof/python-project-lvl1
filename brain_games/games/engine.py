@@ -19,12 +19,14 @@ def play(game):
         return
     question_count = 3
     right_answers_count = 0
-    print(game.get_rules())  # noqa:WPS421
+    print(game.rules)  # noqa:WPS421
     while right_answers_count < question_count:
         question_answer = game.get_question_answer()
         print('Question: {0}'.format(question_answer[0]))  # noqa:WPS421
         user_answer = string('Your answer: ')
         if question_answer[1] != user_answer:
+            if (game.show_correct_answer):
+                print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(user_answer, question_answer[1]))  # noqa:E501,WPS421
             print("Let's try again, {0}!".format(name))  # noqa:WPS421
             return
         print('Correct!')  # noqa:WPS421

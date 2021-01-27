@@ -1,15 +1,8 @@
 """Implement Even game logic."""
 from random import randint
 
-
-def get_rules():
-    """
-    Generate rules string.
-
-    Returns:
-        string: Rules string.
-    """
-    return 'Answer "yes" if the number is even, otherwise answer "no".'
+show_correct_answer = False
+rules = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_question_answer():

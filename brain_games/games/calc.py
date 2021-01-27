@@ -1,15 +1,8 @@
 """Implement Calc game logic."""
 from random import choice, randint
 
-
-def get_rules():
-    """
-    Generate rules string.
-
-    Returns:
-        string: Rules string.
-    """
-    return 'What is the result of the expression?.'
+show_correct_answer = False
+rules = 'What is the result of the expression?.'
 
 
 def get_question_answer():
