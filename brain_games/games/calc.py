@@ -1,8 +1,8 @@
 """Implement Calc game logic."""
 from random import choice, randint
 
-show_correct_answer = False
-rules = 'What is the result of the expression?.'
+SHOW_CORRECT_ANSWER = False
+RULES = 'What is the result of the expression?.'
 
 
 def get_question_answer():

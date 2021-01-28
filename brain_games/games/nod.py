@@ -1,8 +1,8 @@
 """Implement Nod game logic."""
 from random import randint
 
-show_correct_answer = True
-rules = 'Find the greatest common divisor of given numbers..'
+SHOW_CORRECT_ANSWER = True
+RULES = 'Find the greatest common divisor of given numbers..'
 
 
 def get_question_answer():

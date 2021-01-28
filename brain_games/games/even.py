@@ -1,8 +1,8 @@
 """Implement Even game logic."""
 from random import randint
 
-show_correct_answer = False
-rules = 'Answer "yes" if the number is even, otherwise answer "no".'
+SHOW_CORRECT_ANSWER = False
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_question_answer():
