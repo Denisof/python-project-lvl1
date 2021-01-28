@@ -6,6 +6,7 @@ rules = 'What number is missing in the progression?.'
 _length = 10
 _question_position = randint(2, 10)  # noqa:S311,WPS432,E501
 
+
 def get_question_answer():
     """
     Generate question.
