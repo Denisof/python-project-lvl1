@@ -28,7 +28,7 @@ def _is_prime(number):
         string: yes if prime, no otherwise.
     """
     if number > 1:
-        for i in range(2, number // 2):  # noqa:WPS111
+        for i in range(2, number // 2 + 1):  # noqa:WPS111
             if (number % i) == 0:
                 return 'no'
     else:
