@@ -23,17 +23,13 @@ def get_question_answer():
     """
     number = randint(_START_NUMBER_FROM, _START_NUMBER_TO)  # noqa:S311
     question = str(number)
-    incr = 1
-    question = ''
+    incr = 2
     while incr <= _LENGTH:  # noqa:WPS111
         number += _increment
         if (incr == _QUESTION_POS):
             question += ' {0}'  # noqa:WPS336
             answer = number
         else:
-            if incr != 1:
-                 question = ' '.join((question, str(number)))
-            else:
-                 question = ''.join((question, str(number)))          
+            question = ' '.join((question, str(number)))
         incr += 1
     return (question.format('..'), str(answer))  # noqa:WPS421,S307
