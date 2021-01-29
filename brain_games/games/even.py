@@ -3,6 +3,8 @@ from random import randint
 
 SHOW_CORRECT_ANSWER = False
 RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
+FROM_INT = 1
+TO_INT = 1000
 
 
 def get_question_answer():
@@ -12,7 +14,7 @@ def get_question_answer():
     Returns:
         tuple: Tuple of question and answer.
     """
-    question = randint(1, 1000)  # noqa:S311
+    question = randint(FROM_INT, TO_INT)  # noqa:S311
     answer = _is_even(question)
     return (question, answer)
 

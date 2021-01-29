@@ -4,6 +4,8 @@ from prompt import string
 from brain_games.modules.cli_interaction import ask_name, greet_user
 from brain_games.scripts.cli import welcome_user
 
+QUESTION_COUNT = 3
+
 
 def play(game):
     """
@@ -17,10 +19,9 @@ def play(game):
     welcome_user(name)
     if not game:
         return
-    question_count = 3
     right_answers_count = 0
     print(game.RULES)  # noqa:WPS421
-    while right_answers_count < question_count:
+    while right_answers_count < QUESTION_COUNT:
         question_answer = game.get_question_answer()
         print('Question: {0}'.format(question_answer[0]))  # noqa:WPS421
         user_answer = string('Your answer: ')

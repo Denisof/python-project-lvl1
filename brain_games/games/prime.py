@@ -3,6 +3,8 @@ from random import randint
 
 SHOW_CORRECT_ANSWER = False
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+START_INT = 1
+END_INT = 30
 
 
 def get_question_answer():
@@ -12,7 +14,7 @@ def get_question_answer():
     Returns:
         tuple: Tuple of question and answer.
     """
-    question = randint(1, 20)  # noqa:S311,WPS432,E501
+    question = randint(START_INT, END_INT)  # noqa:S311
     answer = _is_prime(question)
     return (question, answer)
 
@@ -32,6 +34,6 @@ def _is_prime(number):
             if (number % i) == 0:
                 return 'no'
     else:
-        return 'yes'
+        return 'no'
 
     return 'yes'
