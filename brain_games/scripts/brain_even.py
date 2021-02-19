@@ -1,7 +1,7 @@
 """Expose even game entrypoint."""
 # !/usr/bin/env python
 import brain_games.games.even  # noqa:WPS301
-from brain_games.games.engine import play
+from brain_games.engine import play
 
 
 def main():

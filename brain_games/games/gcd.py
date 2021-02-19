@@ -1,7 +1,6 @@
 """Implement Nod game logic."""
-from random import randint
+import random
 
-SHOW_CORRECT_ANSWER = True
 RULES = 'Find the greatest common divisor of given numbers..'
 START_INT = 1
 END_INT = 50
@@ -14,8 +13,8 @@ def get_question_answer():
     Returns:
         tuple: Tuple of question and answer.
     """
-    first_num = randint(START_INT, END_INT)  # noqa:S311
-    second_num = randint(START_INT, END_INT)  # noqa:S311
+    first_num = random.randint(START_INT, END_INT)  # noqa:S311
+    second_num = random.randint(START_INT, END_INT)  # noqa:S311
     question = '{0} {1}'.format(first_num, second_num)  # noqa:S311
     return (question, str(_find_nod(first_num, second_num)))
 

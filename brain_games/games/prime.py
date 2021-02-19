@@ -1,7 +1,6 @@
 """Implement Even game logic."""
-from random import randint
+import random
 
-SHOW_CORRECT_ANSWER = False
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 START_INT = 1
 END_INT = 30
@@ -14,8 +13,8 @@ def get_question_answer():
     Returns:
         tuple: Tuple of question and answer.
     """
-    question = randint(START_INT, END_INT)  # noqa:S311
-    answer = _is_prime(question)
+    question = random.randint(START_INT, END_INT)  # noqa:S311
+    answer = 'yes' if _is_prime(question) else 'no'
     return (question, answer)
 
 
@@ -27,13 +26,12 @@ def _is_prime(number):
         number (int): Number to check.
 
     Returns:
-        string: yes if prime, no otherwise.
+        bool: True if prime, False otherwise.
     """
-    if number > 1:
-        for i in range(2, number // 2 + 1):  # noqa:WPS111
-            if (number % i) == 0:
-                return 'no'
-    else:
-        return 'no'
+    if number <= 1:
+        return False
+    for i in range(2, number // 2 + 1):  # noqa:WPS111
+        if (number % i) == 0:
+            return False
 
-    return 'yes'
+    return True
