@@ -9,6 +9,11 @@ LAST_NUMBER = 100
 ADD = '+'
 SUB = '-'
 MUL = '*'
+calc_funcs_map = {
+    ADD: operator.add,
+    SUB: operator.sub,
+    MUL: operator.mul,
+}
 
 
 def get_question_and_answer():
@@ -18,11 +23,6 @@ def get_question_and_answer():
     Returns:
         tuple: Tuple of question and answer.
     """
-    calc_funcs_map = {
-        ADD: operator.add,
-        SUB: operator.sub,
-        MUL: operator.mul,
-    }
     operation = random.choice((ADD, SUB, MUL))
     left_operand = random.randint(TO_NUMBER, LAST_NUMBER)
     right_operand = random.randint(START_NUMBER, TO_NUMBER)
