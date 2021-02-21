@@ -6,14 +6,14 @@ FROM_INT = 1
 TO_INT = 1000
 
 
-def get_question_answer():
+def get_question_and_answer():
     """
     Generate question.
 
     Returns:
         tuple: Tuple of question and answer.
     """
-    question = random.randint(FROM_INT, TO_INT)  # noqa:S311
+    question = random.randint(FROM_INT, TO_INT)
     answer = 'yes' if _is_even(question) else 'no'
     return (question, answer)
 

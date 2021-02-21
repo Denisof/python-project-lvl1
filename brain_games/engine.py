@@ -1,8 +1,8 @@
 """Runs a game injected."""
-from prompt import string
+import prompt
 
-QUESTION_COUNT = 3
-_CORRECT_ANWER_TEMPLATE = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
+ANSWERS_TO_WIN_COUNT = 3
+_CORRECT_ANSWER_TEMPLATE = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
 
 
 def play(game):
@@ -15,26 +15,24 @@ def play(game):
     greet_user()
     name = ask_name()
     welcome_user(name)
-    if not game:
-        return
     right_answers_count = 0
-    print(game.RULES)  # noqa:WPS421
-    while right_answers_count < QUESTION_COUNT:
-        question_answer, correct_answer = game.get_question_answer()
-        print('Question: {0}'.format(question_answer))  # noqa:WPS421
-        user_answer = string('Your answer: ')
+    print(game.RULES)
+    while right_answers_count < ANSWERS_TO_WIN_COUNT:
+        question, correct_answer = game.get_question_and_answer()
+        print('Question: {0}'.format(question))
+        user_answer = prompt.string('Your answer: ')
         if correct_answer != user_answer:
-            print(_CORRECT_ANWER_TEMPLATE.format(  # noqa:WPS421
+            print(_CORRECT_ANSWER_TEMPLATE.format(
                 user_answer,
                 correct_answer,
             ),
             )
-            print("Let's try again, {0}!".format(name))  # noqa:WPS421
+            print("Let's try again, {0}!".format(name))
             return
-        print('Correct!')  # noqa:WPS421
+        print('Correct!')
         right_answers_count += 1
 
-    print('Congratulations, {0}!'.format(name))  # noqa:WPS421
+    print('Congratulations, {0}!'.format(name))
 
 
 def ask_name():
@@ -44,12 +42,12 @@ def ask_name():
     Returns:
         string: Name provided by user
     """
-    return string('May I have your name? ')
+    return prompt.string('May I have your name? ')
 
 
 def greet_user():
     """Greet user in cli."""
-    print('Welcome to the Brain Games!')  # noqa:WPS421
+    print('Welcome to the Brain Games!')
 
 
 def welcome_user(name):
@@ -59,4 +57,4 @@ def welcome_user(name):
     Args:
         name (string): User name.
     """
-    print('Hello, {0}'.format(name))  # noqa:WPS421
+    print('Hello, {0}'.format(name))
