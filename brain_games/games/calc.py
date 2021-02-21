@@ -27,6 +27,7 @@ def get_question_and_answer():
     left_operand = random.randint(TO_NUMBER, LAST_NUMBER)
     right_operand = random.randint(START_NUMBER, TO_NUMBER)
     question = '{0} {1} {2}'.format(left_operand, operation, right_operand)
+    current_operation = calc_funcs_map[operation]
     return (
-        question, str(calc_funcs_map[operation](left_operand, right_operand)),
+        question, str(current_operation(left_operand, right_operand)),
     )  # noqa:S307
